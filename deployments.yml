@@ -13,7 +13,6 @@ spec:
           image: achang99/db:latest
           command: ["sh", "-c", "mysql --user=root --password=Password videos_db < /docker-entrypoint-initdb.d/schema.sql"]
       restartPolicy: Never
-
 ---
 # MySQL
 apiVersion: apps/v1
