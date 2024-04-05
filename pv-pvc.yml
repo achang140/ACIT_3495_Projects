@@ -14,7 +14,7 @@ spec:
     name: mysql-pvc
   csi:
     driver: pd.csi.storage.gke.io
-    volumeHandle: # To be added 
+    volumeHandle: ACIT-3495/acit-3495-419422/zones/us-central1-c/disks/mysql-disk
     fsType: ext4
 ---
 apiVersion: v1
@@ -45,7 +45,7 @@ spec:
     name: filesystem-pvc
   csi:
     driver: pd.csi.storage.gke.io
-    volumeHandle: # To be added 
+    volumeHandle: ACIT-3495/acit-3495-419422/zones/us-central1-c/disks/filesystem-disk
     fsType: ext4
 ---
 apiVersion: v1

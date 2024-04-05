@@ -19,7 +19,7 @@ metadata:
   name: authentication-service
 spec:
   selector:
-    app: authentication ### auth originally
+    app: authentication
   ports:
     - protocol: TCP
       port: 3000
