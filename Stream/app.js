@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 app.post("/login", async (req, res) => {
     const { username, password } = req.body;
 
-    await fetch("http://acit3495_a1-auth-1:3000/authenticate", {
+    await fetch("http://authentication-service:3000/authenticate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -42,7 +42,7 @@ app.post("/login", async (req, res) => {
 });
 
 const connection = mysql.createConnection({
-    host: "acit3495_a1-db-1",
+    host: "mysql-service",
     user: "videouser",
     password: "Password",
     database: "videos_db",

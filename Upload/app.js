@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 app.post("/login", async (req, res) => {
     const { username, password } = req.body;
 
-    await fetch("http://acit3495_a1-auth-1:3000/authenticate", {
+    await fetch("http://authentication-service:3000/authenticate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -47,7 +47,7 @@ app.post("/login", async (req, res) => {
 const createConnection = async () => {
     try {
         const connection = await mysql.createConnection({
-            host: "acit3495_a1-db-1",
+            host: "mysql-service",
             user: "videouser",
             password: "Password",
             database: "videos_db"
@@ -64,7 +64,7 @@ const createConnection = async () => {
 app.post("/upload", upload.single("video"), async (req, res) => {
     const connection = await createConnection();
     const title = req.file.originalname;
-    const path = `http://acit3495_a1-filesystem-1:3090/uploads/${title}`;
+    const path = `http://filesystem-service:3090/uploads/${title}`;
 
     try {
         const sql = `INSERT INTO videos (title, path) VALUES (?, ?)`;
@@ -84,7 +84,7 @@ app.post("/upload", upload.single("video"), async (req, res) => {
             filename: title,
         });
 
-        await axios.post(`http://acit3495_a1-filesystem-1:3090/upload`, formData, {
+        await axios.post(`http://filesystem-service:3090/upload`, formData, {
             headers: {
                 ...formData.getHeaders(),
             },

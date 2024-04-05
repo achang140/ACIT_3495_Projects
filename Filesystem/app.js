@@ -20,7 +20,7 @@ const upload = multer({ storage: storage });
 
 app.post("/upload", upload.single("video"), (req, res) => {
     const title = req.file.originalname;
-    const path = `http://acit3495_a1-filesystem-1:3090/uploads/${title}`;
+    const path = `http://filesystem-service:3090/uploads/${title}`;
 
     res.send(`Video ${title} added with path ${path}`);
 });
