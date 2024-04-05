@@ -7,7 +7,7 @@ loginform.addEventListener("submit", async (event) => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    await fetch("http://localhost:3000/authenticate", {
+    await fetch("http://authentication-service:3000/authenticate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
