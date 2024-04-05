@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streaming</title>
+    <link rel="stylesheet" href="style_watch.css">
+</head>
+<body>
+    <h1>Video Streaming Service</h1>
+    <ul id="video-list"></ul>
+
+    <script>
+        fetch('/videosfs')
+            .then(response => response.json())
+            .then(data => {
+                const videoList = document.getElementById('video-list');
+                data.forEach(video => {
+                const li = document.createElement('li');
+                li.innerHTML = `<b>${video.title}</b><br><video width="320" height="240" controls><source src="${video.path}" type="video/mp4"></video>`
+                videoList.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+      </script>
+
+    <button onclick="goToUpload()">Go to Upload Service</button>
+
+    <script>
+        function goToUpload() {
+            window.location.href = "http://localhost:3060";
+        }
+    </script>
+      
+</body>
+</html>
