@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: achang99/db:latest
+          image: achang99/db:v2
           ports:
             - containerPort: 3306
           envFrom:
