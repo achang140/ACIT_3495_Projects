@@ -10,9 +10,9 @@ kubectl apply -f auto-scaling.yml
 ```
 
 ```
-gcloud compute disk create mysql-disk --zone=us-central1-a --size=5GB
+gcloud compute disks create mysql-disk --zone=us-central1-c --size=5GB
 
-gcloud compute disk create filesystem-disk --zone=us-central1-a --size=5GB
+gcloud compute disks create filesystem-disk --zone=us-central1-c --size=5GB
 ```
 
 ```
@@ -26,7 +26,10 @@ kubectl delete pods --all
 
 ```
 kubectl get hpa
+watch kubectl get hpa
 
+kubectl get configmaps
+kubectl get secrets
 kubectl get pods 
 kubectl get services 
 kubectl get deployments 
