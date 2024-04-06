@@ -1,24 +1,3 @@
-# Authentication
-# apiVersion: autoscaling/v1
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: authentication-hpa
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: authentication-deployment
-#   minReplicas: 1
-#   maxReplicas: 5
-#   targetCPUUtilizationPercentage: 10
-  # metrics:
-  # - type: Resource
-  #   resource:
-  #     name: cpu
-  #     target:
-  #       type: Utilization
-  #       averageUtilization: 10
----
 # Upload
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -32,13 +11,6 @@ spec:
   minReplicas: 1
   maxReplicas: 20
   targetCPUUtilizationPercentage: 20
-  # metrics:
-  # - type: Resource
-  #   resource:
-  #     name: cpu
-  #     target:
-  #       type: Utilization
-  #       averageUtilization: 10
 ---
 # Stream
 apiVersion: autoscaling/v1
@@ -53,10 +25,3 @@ spec:
   minReplicas: 1
   maxReplicas: 20
   targetCPUUtilizationPercentage: 20
-  # metrics:
-  # - type: Resource
-  #   resource:
-  #     name: cpu
-  #     target:
-  #       type: Utilization
-  #       averageUtilization: 10
