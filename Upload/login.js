@@ -16,7 +16,8 @@ loginform.addEventListener("submit", async (event) => {
     }).then((response) => response.json())
     .then((data) =>  {
         if (data.status === 200) {
-            window.location.href = "http://localhost:3060/upload.html"
+            // window.location.href = "http://localhost:3060/upload.html"
+            window.location.href = "upload.html"
         } else {
             alert("Incorrect Credentials")
         }

@@ -16,7 +16,7 @@ loginform.addEventListener("submit", async (event) => {
     }).then((response) => response.json())
     .then((data) =>  {
         if (data.status === 200) {
-            window.location.href = "http://localhost:3030/watch.html"
+            window.location.href = "watch.html"
         } else {
             alert("Incorrect Credentials")
         }
