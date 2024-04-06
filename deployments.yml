@@ -116,6 +116,9 @@ spec:
           image: achang99/upload:v2
           ports:
             - containerPort: 3060
+          resources:
+            requests:
+              cpu: 10m     
 ---
 # Stream
 apiVersion: apps/v1
@@ -137,3 +140,6 @@ spec:
           image: achang99/stream:v2
           ports:
             - containerPort: 3030
+          resources:
+            requests:
+              cpu: 10m
