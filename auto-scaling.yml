@@ -15,9 +15,9 @@ spec:
   - type: Resource
     resource:
       name: cpu
-    target:
-      type: Utilization
-      averageUtilization: 10
+      target:
+        type: Utilization
+        averageUtilization: 10
 ---
 # Upload
 apiVersion: autoscaling/v2
@@ -36,9 +36,9 @@ spec:
   - type: Resource
     resource:
       name: cpu
-    target:
-      type: Utilization
-      averageUtilization: 10
+      target:
+        type: Utilization
+        averageUtilization: 10
 ---
 # Stream
 apiVersion: autoscaling/v2
@@ -57,6 +57,6 @@ spec:
   - type: Resource
     resource:
       name: cpu
-    target:
-      type: Utilization
-      averageUtilization: 10
+      target:
+        type: Utilization
+        averageUtilization: 10
