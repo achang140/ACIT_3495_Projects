@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: mysql-init
-          image: achang99/db:latest
+          image: achang99/db:v2
           command: ["sh", "-c", "mysql --user=root --password=Password videos_db < /docker-entrypoint-initdb.d/schema.sql"]
       restartPolicy: Never
 ---
@@ -64,7 +64,7 @@ spec:
     spec:
       containers:
         - name: authentication
-          image: achang99/auth:latest
+          image: achang99/auth:v2
           ports:
             - containerPort: 3000
 ---
@@ -85,7 +85,7 @@ spec:
     spec:
       containers:
         - name: filesystem
-          image: achang99/filesystem:latest
+          image: achang99/filesystem:v2
           ports:
             - containerPort: 3090
           volumeMounts:
@@ -113,7 +113,7 @@ spec:
     spec:
       containers:
         - name: upload
-          image: achang99/upload:latest
+          image: achang99/upload:v2
           ports:
             - containerPort: 3060
 ---
@@ -134,6 +134,6 @@ spec:
     spec:
       containers:
         - name: stream
-          image: achang99/stream:latest
+          image: achang99/stream:v2
           ports:
             - containerPort: 3030
